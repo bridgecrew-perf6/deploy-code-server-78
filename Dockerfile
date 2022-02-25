@@ -33,7 +33,7 @@ RUN sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash - && \
     sudo apt-get clean && \
     sudo rm -rf /var/lib/apt/lists/* && \
     sudo curl -L https://raw.github.com/simonwhitaker/gibo/master/gibo -o /usr/local/bin && \
-    chmod +x /usr/local/bin/gibo
+    sudo chmod +x /usr/local/bin/gibo
 # -----------
 
 # Install a VS Code extension:
