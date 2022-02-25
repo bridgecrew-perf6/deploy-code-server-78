@@ -1,4 +1,4 @@
-name: code-server - Build and Push
+name: amd64 code-server - Build and Push
 
 on: [ workflow_dispatch ]
 
