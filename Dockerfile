@@ -21,7 +21,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # You can add custom software and dependencies for your environment below
 
-# Install Nodejs & Yarn & Hugo
+# Install Nodejs & Yarn & Hugo & Gibo
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash - && \
     sudo curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
@@ -31,7 +31,9 @@ RUN sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash - && \
     sudo apt-get install ./hugo.deb && \
     sudo rm hugo.deb && \
     sudo apt-get clean && \
-    sudo rm -rf /var/lib/apt/lists/*
+    sudo rm -rf /var/lib/apt/lists/* && \
+    sudo curl -L https://raw.github.com/simonwhitaker/gibo/master/gibo -o /usr/local/bin && \
+    chmod +x /usr/local/bin/gibo
 # -----------
 
 # Install a VS Code extension:
