@@ -2,11 +2,12 @@ name: amd64 code-server - Build and Push
 
 on: [ workflow_dispatch ]
 
+permissions:
+  packages: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
     steps:
       - 
         name: Checkout
