@@ -2,9 +2,6 @@ name: amd64 code-server - Build and Push
 
 on: [ workflow_dispatch ]
 
-permissions:
-  packages: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,7 +18,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_TOKEN }}
       - 
         name: Build and Push
         uses: docker/build-push-action@v2
