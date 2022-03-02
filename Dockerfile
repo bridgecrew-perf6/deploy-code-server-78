@@ -27,7 +27,7 @@ RUN sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
     sudo apt-get update && \
     sudo apt-get install -y nodejs yarn && \
-    sudo curl -L https://github.com/gohugoio/hugo/releases/latest/download/hugo_0.92.2_Linux-64bit.deb -o hugo.deb && \
+    sudo curl -L https://github.com/gohugoio/hugo/releases/latest/download/hugo_0.93.0_Linux-64bit.deb -o hugo.deb && \
     sudo apt-get install ./hugo.deb && \
     sudo rm hugo.deb && \
     sudo apt-get clean && \
