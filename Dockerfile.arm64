@@ -31,7 +31,7 @@ RUN sudo curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash - && \
     sudo curl -L $hugolatest -o hugo.deb && \
     sudo apt install ./hugo.deb && \
     sudo rm hugo.deb && \
-    echo "exec fish" > /home/coder/.bashrc && \
+    sudo chsh coder -s /usr/bin/fish && \
     sudo apt clean && \
     sudo rm -rf /var/lib/apt/lists/* && \
     sudo curl -L https://raw.github.com/simonwhitaker/gibo/master/gibo -o /usr/local/bin/gibo && \
