@@ -26,14 +26,11 @@ RUN sudo curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash - && \
     sudo curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
     sudo apt update && \
-    sudo apt install -y nodejs yarn jq software-properties-common && \
+    sudo apt install -y nodejs yarn jq fish && \
     hugolatest=$(curl https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r .assets[].browser_download_url | grep Linux-ARM64.deb) && \
     sudo curl -L $hugolatest -o hugo.deb && \
     sudo apt install ./hugo.deb && \
     sudo rm hugo.deb && \
-    sudo apt-add-repository ppa:fish-shell/release-3 -y && \
-    sudo apt update && \
-    sudo apt install fish && \
     echo "exec fish" >> /home/coder/.bashrc && \
     sudo apt clean && \
     sudo rm -rf /var/lib/apt/lists/* && \
